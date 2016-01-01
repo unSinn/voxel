@@ -1,1 +1,3 @@
-Voxel Test Project
+== Voxel ==
+
+Voxel Test Project using libGDX.
