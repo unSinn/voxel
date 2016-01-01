@@ -5,8 +5,11 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import ch.ma3.voxel.VoxelGame;
 
 public class DesktopLauncher {
-	public static void main (String[] arg) {
-		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-		new LwjglApplication(new VoxelGame(), config);
-	}
+    public static void main(String[] arg) {
+        LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
+        config.useGL30 = true;
+        config.samples = 8;
+        config.fullscreen = false;
+        new LwjglApplication(new VoxelGame(), config);
+    }
 }
