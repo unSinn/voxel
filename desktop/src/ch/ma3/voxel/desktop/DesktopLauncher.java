@@ -13,7 +13,7 @@ public class DesktopLauncher {
         config.useGL30 = true;
         config.samples = 8;
         config.fullscreen = false;
-
+        Gdx.gl.glViewport(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 
         PerspectiveCamera cam = new PerspectiveCamera(67, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         cam.position.set(10f, 10f, 10f);

@@ -10,6 +10,10 @@ import com.badlogic.gdx.graphics.g3d.environment.DirectionalLight;
 import com.badlogic.gdx.graphics.g3d.utils.ModelBuilder;
 
 public class VoxelGame extends ApplicationAdapter {
+
+    public final String TAG = this.getClass().getSimpleName();
+
+
     public Camera cam;
     public ModelBatch modelBatch;
     public Model model;
@@ -29,16 +33,18 @@ public class VoxelGame extends ApplicationAdapter {
                 new Material(ColorAttribute.createDiffuse(Color.RED)),
                 VertexAttributes.Usage.Position | VertexAttributes.Usage.Normal);
         instance = new ModelInstance(model);
+
+        Gdx.app.debug(TAG, "created");
     }
 
     @Override
     public void render() {
-        Gdx.gl.glViewport(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         Gdx.gl.glClear(GL30.GL_COLOR_BUFFER_BIT | GL30.GL_DEPTH_BUFFER_BIT);
 
         modelBatch.begin(cam);
         modelBatch.render(instance, environment);
         modelBatch.end();
+        //Gdx.app.debug(TAG, "rendered");
     }
 
     @Override
